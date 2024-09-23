@@ -1,31 +1,35 @@
 package aed;
 
 public class Horario {
-
+    private int minutos;
+    private int hora;
+    
     public Horario(int hora, int minutos) {
-        // Implementar
+        this.minutos = minutos;
+        this.hora = hora;
     }
 
     public int hora() {
-        // Implementar
-        return -1;
+        return this.hora;
     }
 
     public int minutos() {
-        // Implementar
-        return -1;
+        return this.minutos;
     }
 
     @Override
     public String toString() {
-        // Implementar
-        return "";
+        return String.valueOf(hora) +":"+ String.valueOf(minutos);
     }
 
     @Override
     public boolean equals(Object otro) {
-        // Implementar
-        return true;
+        Horario otroHorario = Horario (otro);
+        if (this.getClass()==otro.getClass()){
+            return otroHorario.hora == this.hora && otroHorario.minutos == this.minutos;
+        } else{
+            return false;
+        }
     }
 
 }
