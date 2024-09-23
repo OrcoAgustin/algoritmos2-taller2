@@ -2,38 +2,54 @@ package aed;
 
 class ArregloRedimensionableDeRecordatorios {
 
+    private Recordatorio[] array;
+    private int largo;
+
     public ArregloRedimensionableDeRecordatorios() {
-        // Implementar
+        this.largo = 0;
+        this.array = new Recordatorio[0];
     }
 
     public int longitud() {
-        // Implementar
-        return -1;
+        return this.largo;
     }
 
     public void agregarAtras(Recordatorio i) {
-        // Implementar
+        this.largo = this.largo + 1;
+        Recordatorio[] nuevoArray = new Recordatorio[this.largo];
+        //se puede usar system copy array?
+        for (int j = 0; j < this.largo; j++) {
+            nuevoArray[j] = this.array[j];
+        }
+        nuevoArray[this.largo - 1] = i;
+        this.array = nuevoArray;
     }
 
     public Recordatorio obtener(int i) {
-        // Implementar
-        return null;
+        return this.array[i];
     }
 
     public void quitarAtras() {
-        // Implementar
+        this.largo = this.largo - 1;
+        Recordatorio[] nuevoArray = new Recordatorio[this.largo];
+        for (int j = 0; j < this.largo; j++) {
+            nuevoArray[j] = this.array[j];
+        }
+        this.array = nuevoArray;
     }
 
     public void modificarPosicion(int indice, Recordatorio valor) {
-        // Implementar
+        this.array[indice] = valor;
     }
 
     public ArregloRedimensionableDeRecordatorios(ArregloRedimensionableDeRecordatorios vector) {
-        // Implementar
     }
 
     public ArregloRedimensionableDeRecordatorios copiar() {
-        // Implementar
-        return null;
+        ArregloRedimensionableDeRecordatorios arrayNuevo = new ArregloRedimensionableDeRecordatorios();
+        for (int j = 0; j < this.largo; j++) {
+            arrayNuevo.agregarAtras(this.array[j]);
+        }
+        return arrayNuevo;
     }
 }
