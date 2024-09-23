@@ -1,6 +1,7 @@
 package aed;
 
 public class Recordatorio {
+
     private String mensaje;
     private Horario horario;
     private Fecha fecha;
@@ -25,16 +26,16 @@ public class Recordatorio {
 
     @Override
     public String toString() {
-    
-        return this.mensaje +" @ " + this.fecha + " " + this.horario;
+
+        return this.mensaje + " @ " + this.fecha + " " + this.horario;
     }
 
     @Override
     public boolean equals(Object otro) {
-        if(this.getclass()== otro.getClass()){
-            Recordatorio otroRecordatorio = new (Recordatorio) otro;
-            return this.mensaje.equals(otroRecordatorio.mensaje()) && this.fecha.equals(otroRecordatorio.fecha()) && this.horario.equals(otroRecordatorio.horario())
-        }else{
+        if (this.getClass() == otro.getClass()) {
+            Recordatorio otroRecordatorio = (Recordatorio) otro;
+            return this.mensaje.equals(otroRecordatorio.mensaje()) && this.fecha.equals(otroRecordatorio.fecha()) && this.horario.equals(otroRecordatorio.horario());
+        } else {
             return false;
         }
     }
