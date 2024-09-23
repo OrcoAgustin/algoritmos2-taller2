@@ -1,37 +1,51 @@
 package aed;
 
 public class Fecha {
+    private int dia;
+    private int mes;
+
     public Fecha(int dia, int mes) {
-        // Implementar
+        this.dia = dia;
+        this.mes = mes;
     }
 
     public Fecha(Fecha fecha) {
-        // Implementar
+        this.dia = fecha.dia;
+        this.mes = fecha.mes;
     }
 
     public Integer dia() {
-        // Implementar
-        return -1;
+        return this.dia;
     }
 
     public Integer mes() {
-        // Implementar
-        return -1;
+        return this.mes;
     }
 
+    @Override
     public String toString() {
-        // Implementar
-        return "";
+        return String.valueOf(this.dia) + "/" + String.valueOf(this.mes);
     }
 
     @Override
     public boolean equals(Object otra) {
-        // Implementar
-        return true;
+        Fecha otraFecha = Fecha (otra);
+        if(get.class(fecha)==get.class(otraFecha)){
+            return this.dia==otraFecha.dia && this.mes==otraFecha.mes;
+        } else{
+            return false;
+        }
     }
 
     public void incrementarDia() {
-        // Implementar
+        if(this.dia==diasEnMes(this.mes)){
+            if(this.mes==12){
+                this.mes=1;
+            }
+            this.dia=1
+        } else{
+            this.dia++;
+        }
     }
 
     private int diasEnMes(int mes) {
