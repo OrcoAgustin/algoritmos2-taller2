@@ -18,13 +18,13 @@ class ArregloRedimensionableDeRecordatorios {
         this.largo = this.largo + 1;
         Recordatorio[] nuevoArray = new Recordatorio[this.largo];
         //se puede usar system copy array?
-        for (int j = 0; j < this.largo; j++) {
+        for (int j = 0; j < this.largo-1; j++) {
             nuevoArray[j] = this.array[j];
         }
         nuevoArray[this.largo - 1] = i;
         this.array = nuevoArray;
     }
-
+    
     public Recordatorio obtener(int i) {
         return this.array[i];
     }

@@ -31,10 +31,10 @@ public class Fecha {
     @Override
     public boolean equals(Object otra) {
         Fecha otraFecha = (Fecha) otra;
-        if (this.getClass() == otraFecha.getClass()) {
-            return this.dia == otraFecha.dia && this.mes == otraFecha.mes;
-        } else {
+        if (this.getClass() != otra.getClass()) {
             return false;
+        } else {
+            return this.dia == otraFecha.dia && this.mes == otraFecha.mes;
         }
     }
 

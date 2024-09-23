@@ -32,11 +32,11 @@ public class Recordatorio {
 
     @Override
     public boolean equals(Object otro) {
-        if (this.getClass() == otro.getClass()) {
-            Recordatorio otroRecordatorio = (Recordatorio) otro;
-            return this.mensaje.equals(otroRecordatorio.mensaje()) && this.fecha.equals(otroRecordatorio.fecha()) && this.horario.equals(otroRecordatorio.horario());
-        } else {
+        Recordatorio otroRecordatorio = (Recordatorio) otro;
+        if (this.getClass() != otro.getClass()) {
             return false;
+        } else {
+            return this.mensaje.equals(otroRecordatorio.mensaje()) && this.fecha.equals(otroRecordatorio.fecha()) && this.horario.equals(otroRecordatorio.horario());
         }
     }
 
