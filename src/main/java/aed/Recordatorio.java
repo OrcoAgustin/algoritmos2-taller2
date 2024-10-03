@@ -17,7 +17,7 @@ public class Recordatorio {
     }
 
     public Fecha fecha() {
-        return this.fecha;
+        return new Fecha(this.fecha.dia(), this.fecha.mes());
     }
 
     public String mensaje() {
